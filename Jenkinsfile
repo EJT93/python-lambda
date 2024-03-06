@@ -7,13 +7,6 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                git credentialsId: '0bcb9385-f23a-4c61-abd5-8e07356c3802', url: 'git@github.com:EJT93/python-lambda.git'
-                git 'https://github.com/EJT93/python-lambda.git'
-            }
-        }
-
         stage('Zip Files') {
             steps {
                 sh 'zip weekly-cost-review.zip weekly-cost-review.py'
